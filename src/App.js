@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Students from './containers/Students/Students';
+import Header from './components/Header/Header';
 
 class App extends Component {
   render() {
     return (
-      <header className='tc pv4 pv5-ns'>
-        <img src={logo} className='br-100 pa1 ba b--black-10 h3 w3' alt='avatar' />
-        <h1 className='f5 f4-ns fw6 mid-gray'>Jasper Whitehouse</h1>
-        <h2 className='f6 gray fw2 ttu tracked'>Los Angeles</h2>
-      </header>
+      <div className="w-100">
+        <Header />
+        <Students />
+      </div>
     );
   }
 }
