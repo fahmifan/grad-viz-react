@@ -1,13 +1,13 @@
 import React from 'react';
 
-import logo from '../../logo.svg';
+import picture from '../../assets/profile_fahmi.jpg';
 
 const student = (props) => (
   <section className="tc pa2 dib">
     <article className="hide-child relative ba b--black-10 mw4 center pointer grow helvetica br4 shadow-4">
     <div className="h-100">  
       <img 
-        src={logo} 
+        src={picture} 
         alt="Photo of John Doe" 
         className="db h4" />
     </div>
