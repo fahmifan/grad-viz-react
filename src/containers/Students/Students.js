@@ -10,6 +10,15 @@ class Students extends Component {
         <Student />
         <Student />
         <Student />
+        <Student />
+        <Student />
+        <Student />
+        <Student />
+        <Student />
+        <Student />
+        <Student />
+        <Student />
+        
       </div>
     );
   }
