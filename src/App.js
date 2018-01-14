@@ -15,7 +15,10 @@ class App extends Component {
       <Router>
       <div className="w-100">
         <Header />
-        <Students />
+          <Switch>
+            <Route path="/students" component={Students} />
+            <Route path="/" component={Home} />
+          </Switch>
       </div>
       </Router>
     );
