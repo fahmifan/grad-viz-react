@@ -4,7 +4,9 @@ import picture from '../../assets/profile_fahmi.jpg';
 
 const student = (props) => (
   <section className="tc pa2 dib">
-    <article className="hide-child relative ba b--black-10 mw4 center pointer grow dim helvetica br4 shadow-4">
+    <article
+      onClick={props.clicked} 
+      className="hide-child relative ba b--black-10 mw4 center pointer grow dim helvetica br4 shadow-4">
     <div className="h-100">  
       <img 
         src={picture} 
