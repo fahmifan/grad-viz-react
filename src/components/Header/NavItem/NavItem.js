@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const navItem = (props) => (
-    <a href="/" className={`link dim gray f6 ${props.header ? props.header : 'f5-ns'} dib mr3 helvetica`}>
+    <Link to={props.link} className={`link dim gray f6 ${props.header ? props.header : 'f5-ns'} dib mr3 helvetica`}>
       {props.children}
-    </a>
+    </Link>
 );
 
 export default navItem;
