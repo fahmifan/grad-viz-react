@@ -12,10 +12,12 @@ import Home from './components/Home/Home';
 class App extends Component {
   render() {
     return (
+      <Router>
       <div className="w-100">
         <Header />
         <Students />
       </div>
+      </Router>
     );
   }
 }
