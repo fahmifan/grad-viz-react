@@ -1,1 +1,9 @@
 @import "tachyons"; 
+
+.bg-blue-sea {
+  background-color: #408BC9;
+}
+
+.blue-sea {
+  color: #408BC9;
+}
