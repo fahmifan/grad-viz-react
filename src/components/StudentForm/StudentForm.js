@@ -1,7 +1,7 @@
 import React from 'react';
 
 const studentForm = () => (
-  <div className="pa1 w-80 pt2 center helvetica">
+  <div className="pa1 h-100 w-80 pt2 center helvetica">
     <label 
       htmlFor="title"
       className="pa2 mt2">
