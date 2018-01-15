@@ -11,7 +11,21 @@ class Students extends Component {
 
   render() {
     return (
-      <div className="w-90 center pa2 flex flex-wrap ">
+      <div className="w-90 vh-100 pa2 flex flex-wrap mt5 ml-auto">
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
+        <Student clicked={() => this.onClickHandler(1)} />
         <Student clicked={() => this.onClickHandler(1)} />
       </div>
     );
