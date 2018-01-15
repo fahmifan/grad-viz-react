@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="w-100">
+        <div className="w-100 dib">
           <Header />
           <Switch>
             <Route path="/students" component={Students} />
