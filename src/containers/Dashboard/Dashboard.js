@@ -7,7 +7,7 @@ import Student from '../../components/Student/Student';
 class Dashoard extends Component {
   render() {
     return (
-      <div className="w-90 h-100 center">
+      <div className="w-90 h-100 center mt5 pt2 relative">
         <Tabs />
         <div className="flex w-95 h-100 center mt0 pa0 ba b--black-20">
           <StudentForm />
