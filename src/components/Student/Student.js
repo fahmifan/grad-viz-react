@@ -3,7 +3,7 @@ import React from 'react';
 import picture from '../../assets/profile_fahmi.jpg';
 
 const student = (props) => (
-  <section className="tc pa2">
+  <section className="tc center pa2 relative">
     <article
       onClick={props.clicked} 
       className="hide-child relative ba b--black-10 mw4 center pointer dim helvetica br3 shadow-4 overflow-hidden">
