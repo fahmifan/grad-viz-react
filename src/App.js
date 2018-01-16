@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Stats from './containers/Stats/Stats';
+import NoMatch from './components/NoMatch/NoMatch';
 
 class App extends Component {
   render() {
@@ -21,7 +22,8 @@ class App extends Component {
             <Route path="/students" component={Students} />
             <Route path="/dashboard/:id" component={Dashboard} />
             <Route path="/stats/:id" component={Stats} />
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route component={NoMatch}/>
           </Switch>
         </div>
       </Router>
