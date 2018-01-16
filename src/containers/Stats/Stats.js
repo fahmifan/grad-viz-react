@@ -26,7 +26,7 @@ class Stats extends Component {
         }] 
       },
       options: {
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         title: {
           display: true,
           text: 'Weekly Math Quiz Grade',
@@ -55,12 +55,12 @@ class Stats extends Component {
 
   render() {
     return (
-      <div className="mt5 pt2 center">
+      <div className="vh-100 w-70 mt5 pt2 center">
         <Bar 
           data={this.state.chartData}
           options={this.state.options}
           width={700}
-          height={300}
+          height={500}
         />
       </div>
     );
