@@ -18,7 +18,7 @@ const studentForm = () => (
           <input className="pa2 input-reset ba bg-transparent w-100 br2" type="number" name="score"  id="score" />
         </div>      
       </fieldset>
-      <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 br2" type="submit" value="Submit" /></div>
+      <div className="mt3"><input className="b ph3 pv2 input-reset ba b--black bg-transparent grow hover-blue pointer f6 br2" type="submit" value="Submit" /></div>
     </form>
     <div className="w-100 measure">
     </div>
