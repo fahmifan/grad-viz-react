@@ -11,6 +11,7 @@ import Home from './components/Home/Home';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Stats from './containers/Stats/Stats';
 import NoMatch from './components/NoMatch/NoMatch';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route component={NoMatch}/>
           </Switch>
+          <Footer />
         </div>
       </Router>
     );
