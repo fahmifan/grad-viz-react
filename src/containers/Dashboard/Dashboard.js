@@ -12,9 +12,8 @@ class Dashoard extends Component {
 
   render() {
     return (
-      <div className="w-90 h-100 center mt5 pt2 relative">
-        <Tabs />
-        <div className="flex w-95 h-100 center mt0 pa0 ba b--black-20">
+        <Tabs url={this.props.match.url} />
+        <div className="flex w-95 h-100 mt0 ph2 pv3 flex flex-wrap">
           <StudentForm />
           <span className="center db">
             <Student />
