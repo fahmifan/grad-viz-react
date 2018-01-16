@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const studentForm = () => (
-  <div className="pa1 h-100 w-100 w-80-ns w-70-m pt2 helvetica mr0">
+  <div className="pa1 h-100 w-100 pt2 helvetica mr0">
     <form action="input-grade_submit" method="post" acceptCharset="utf-8" className="pb3 w-100">
       <fieldset id="input_grade" className="ba b--transparent ph0 mh0 w-100">
         <div className="mt3 w-100">
