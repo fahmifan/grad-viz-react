@@ -89,7 +89,7 @@ class Stats extends Component {
 
 const mapStateToProps = state  => {
   return {
-    quizes: state.quizes
+    quizes: state.user.quizes
   }
 }
 
