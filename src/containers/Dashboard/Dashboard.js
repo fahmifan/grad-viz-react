@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Tabs from '../../components/Tabs/Tabs';
-import StudentForm from '../../components/StudentForm/StudentForm';
+import StudentForm from '../StudentForm/StudentForm';
 import Student from '../../components/Student/Student';
-import Table from '../../components/Table/Table';
+import Table from '../Table/Table';
 
 class Dashoard extends Component {
 
@@ -23,11 +23,8 @@ class Dashoard extends Component {
             <Student />
             <button
               onClick={() => this.statsClickHandler(1)} 
-              className="db center pointer shadow-4 w4 f6 link dim br3 ph3 pv2 mb2 white bg-blue bw0 overflow-hidden"
+              className="db center pointer shadow-4 w4 f6 link dim br2 ph3 pv2 mb2 white bg-blue bw0 overflow-hidden"
               >Stats</button>
-            <button 
-              className="db center pointer shadow-4 w4 f6 link dim br3 ph3 pv2 mb2 white bg-blue bw0 overflow-hidden"
-              >Compare</button>
           </span>
           <span className="mt3 mb5 w-100">
             <Table />
