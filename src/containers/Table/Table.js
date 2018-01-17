@@ -1,35 +1,41 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import TableRow from '../../components/TableRow/TableRow';
 
 class Table extends Component {
+
+  renderNilai = () => {
+    
+  }
+
   render() {
-    return (
-      <table className="collapse center w-100 tc helvetica">
+    const table = this.props.quizes.map(quiz => <TableRow
+        key={quiz.id}
+        dateCreated={quiz.created_at}
+        quizTitle={quiz.quiz_title}
+        nilai={quiz.value}
+      />
+    )
+    return (      
+      <table className="collapse w-100 mw-80-ns tc helvetica">
         <tbody>
           <tr className="blue bb b--black-20">
-            <th className="pa2">Date</th>
-            <th className="pa2">Quiz Title</th>
-            <th className="pa2">Score</th>
+            <td className="tc b pv2">Date</td>
+            <td className="tc b pv2">Quiz Title</td>
+            <td className="tc b pv2">Score</td>
           </tr>
-          {this.props.data}
-          <tr className="bb b--black-20">
-            <td className="pa2 tc">2018-1-15</td>
-            <td className="pa2">Linier Algebra</td>
-            <td className="pa2">85</td>
-          </tr>
-          <tr className="bb b--black-20">
-            <td className="pa2">2018-1-15</td>
-            <td className="pa2">Linier Algebra</td>
-            <td className="pa2">85</td>
-          </tr>
-          <tr className="bb b--black-20">
-            <td className="pa2">2018-1-15</td>
-            <td className="pa2">Linier Algebra</td>
-            <td className="pa2">85</td>
-          </tr>
+          {table}
         </tbody>
       </table>
     );    
   }
 }
 
-export default Table;
+const mapStateToProps = state => {
+  return {
+    quizes: state.quizes
+  }
+}
+
+export default connect(mapStateToProps)(Table);
