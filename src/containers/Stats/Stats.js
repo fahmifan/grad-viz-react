@@ -60,7 +60,7 @@ class Stats extends Component {
           data={this.state.chartData}
           options={this.state.options}
           width={700}
-          height={500}
+          height={400}
         />
       </div>
     );
