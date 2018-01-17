@@ -1,34 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
+import * as actionType from '../../store/action';
 import Input from '../../components/Input/Input';
 
 class StudentForm extends Component {
   state = {
-    quizTitle: '',
-    date: '',
-    score: '',
+    quiz: {
+      title: '',
+      date: '',
+      score: '',
+    }
   } 
 
-  onQuizTitleChange = (evt) => {
-    const quizTitle = evt.target.value;
+  onQuizChange = (evt, type) => {
+    const newQuiz = {...this.state.quiz};
+    newQuiz[type] = evt.target.value;
     this.setState({
-      quizTitle: quizTitle
+      quiz: newQuiz
     })
   }
 
-  onDateChange = (evt) => {
-    const date = evt.target.value;
-    this.setState({
-      date: date
-    })
-  }
+  // onDateChange = (evt) => {
+  //   const date = evt.target.value;
+  //   const newQuiz = {...this.state.quiz};
+  //   newQuiz.date = date;
+  //   this.setState({
+  //     quiz: newQuiz
+  //   })
+  // }
 
-  onScoreChange = (evt) => {
-    const score = parseFloat(evt.target.value);
-    this.setState({
-      score: score
-    })
-  }
+  // onScoreChange = (evt) => {
+  //   const score = parseFloat(evt.target.value);
+  //   const newQuiz = {...this.state.quiz}
+  //   newQuiz
+  //   this.setState({
+  //     score: score
+  //   })
+  // }
 
   render() {
     return (
@@ -37,34 +46,46 @@ class StudentForm extends Component {
           <Input
             label={"Quiz Title"}
             type={"text"}
-            changed={(evt) => this.onQuizTitleChange(evt)}
-            value={this.state.quizTitle}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'title')}
+            value={this.props.quiz.title}
             placeholder={"Your title"}
           />
           <Input
             label={"Date"}
             type={"date"}
-            changed={(evt) => this.onDateChange(evt)}
-            value={this.state.date}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'date')}
+            value={this.props.quiz.date}
           />
           <Input
             label={"Score"}
             type={"number"}
-            changed={(evt) => this.onScoreChange(evt)}
-            value={this.state.score}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'score')}
+            value={this.props.quiz.score}
           />
         </fieldset>
         <div className="mt3">
           <button 
-            //{className="b ph3 pv2 input-reset ba b--black bg-transparent grow hover-blue pointer f6 br2"} 
             className="db pointer f6 link br2 ph3 pv2 white bg-blue bw0 dim"
-            >
-            Submit
+            onClick={this.props.onSubmitQuiz}
+          >Submit
           </button>
         </div>
-      </div>        
+      </div>
     );
   }
 }
 
-export default StudentForm;
+const mapStateToProps = state => {
+  return {
+    quiz: state.newQuiz
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSubmitQuiz: () => dispatch({type: actionType.SUBMIT_QUIZ}),
+    onQuizChange: (value, type) => dispatch({type: actionType.CHANGE_FORM, value: value, type: type})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentForm);
