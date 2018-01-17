@@ -26,7 +26,7 @@ class Dashoard extends Component {
               className="db center pointer shadow-4 w4 f6 link dim br2 ph3 pv2 mb2 white bg-blue bw0 overflow-hidden"
               >Stats</button>
           </span>
-          <span className="mt3 mb5 w-100">
+          <span className="mt3 mb5 w-100 w-80-ns pr2">
             <Table />
           </span>
         </div>
