@@ -5,13 +5,6 @@ import * as actionType from '../../store/action';
 import Input from '../../components/Input/Input';
 
 class StudentForm extends Component {
-  // state = {
-  //   quiz: {
-  //     title: '',
-  //     date: '',
-  //     score: '',
-  //   }
-  // } 
 
   onQuizChange = (evt, type) => {
     const newQuiz = {...this.state.quiz};
@@ -20,24 +13,6 @@ class StudentForm extends Component {
       quiz: newQuiz
     })
   }
-
-  // onDateChange = (evt) => {
-  //   const date = evt.target.value;
-  //   const newQuiz = {...this.state.quiz};
-  //   newQuiz.date = date;
-  //   this.setState({
-  //     quiz: newQuiz
-  //   })
-  // }
-
-  // onScoreChange = (evt) => {
-  //   const score = parseFloat(evt.target.value);
-  //   const newQuiz = {...this.state.quiz}
-  //   newQuiz
-  //   this.setState({
-  //     score: score
-  //   })
-  // }
 
   render() {
     return (
