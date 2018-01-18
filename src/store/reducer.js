@@ -39,33 +39,39 @@ const initialState = {
     ]
   },
   newQuiz: {
-    title: 'hello',
-    date: '',
-    score: '',
+    id: null,
+    quiz_title: 'hello',
+    created_at: '',
+    value: '',
   }
 }
 
 const reducer = (state = initialState, action) => {
-  switch(action) {
+  switch(action.type) {
     case actionType.SUBMIT_QUIZ: 
       const countId = state.countId;
       return {
-        countId: countId + 1,
-        user: {
+        ...state,
+        "countId": countId + 1,
+        "user": {
           ...state.user,
-          quizes: [
+          "quizes": [
             ...state.user.quizes,
-            state.newQuiz
+            {
+              ...state.newQuiz,
+              id: countId + 1
+            }
           ]
         }
       }
     case actionType.CHANGE_FORM: 
-      console.log('change form');
       return {
         ...state,
+        countId: countId + 1,
         newQuiz: {
           ...state.newQuiz,
-          [action.type]: action.value
+          id: countId + 1,
+          [action.field]: action.value
         }
       }
     default: 
