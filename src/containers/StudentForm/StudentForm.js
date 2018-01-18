@@ -5,13 +5,13 @@ import * as actionType from '../../store/action';
 import Input from '../../components/Input/Input';
 
 class StudentForm extends Component {
-  state = {
-    quiz: {
-      title: '',
-      date: '',
-      score: '',
-    }
-  } 
+  // state = {
+  //   quiz: {
+  //     title: '',
+  //     date: '',
+  //     score: '',
+  //   }
+  // } 
 
   onQuizChange = (evt, type) => {
     const newQuiz = {...this.state.quiz};
@@ -46,21 +46,21 @@ class StudentForm extends Component {
           <Input
             label={"Quiz Title"}
             type={"text"}
-            changed={(evt) => this.props.onQuizChange(evt.target.value, 'title')}
-            value={this.props.quiz.title}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'quiz_title')}
+            
             placeholder={"Your title"}
           />
           <Input
             label={"Date"}
             type={"date"}
-            changed={(evt) => this.props.onQuizChange(evt.target.value, 'date')}
-            value={this.props.quiz.date}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'created_at')}
+            
           />
           <Input
             label={"Score"}
             type={"number"}
-            changed={(evt) => this.props.onQuizChange(evt.target.value, 'score')}
-            value={this.props.quiz.score}
+            changed={(evt) => this.props.onQuizChange(evt.target.value, 'value')}
+            
           />
         </fieldset>
         <div className="mt3">
@@ -76,15 +76,17 @@ class StudentForm extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state.newQuiz);
   return {
     quiz: state.newQuiz
   }
 }
 
 const mapDispatchToProps = dispatch => {
+  console.log(dispatch)
   return {
     onSubmitQuiz: () => dispatch({type: actionType.SUBMIT_QUIZ}),
-    onQuizChange: (value, type) => dispatch({type: actionType.CHANGE_FORM, value: value, type: type})
+    onQuizChange: (value, type) => dispatch({type: actionType.CHANGE_FORM, value: value, field: type})
   }
 }
 
