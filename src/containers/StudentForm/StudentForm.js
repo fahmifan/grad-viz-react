@@ -22,20 +22,20 @@ class StudentForm extends Component {
             label={"Quiz Title"}
             type={"text"}
             changed={(evt) => this.props.onQuizChange(evt.target.value, 'quiz_title')}
-            
+            value={this.props.quiz.quiz_title}
             placeholder={"Your title"}
           />
           <Input
             label={"Date"}
             type={"date"}
             changed={(evt) => this.props.onQuizChange(evt.target.value, 'created_at')}
-            
+            value={this.props.quiz.created_at}
           />
           <Input
             label={"Score"}
             type={"number"}
             changed={(evt) => this.props.onQuizChange(evt.target.value, 'value')}
-            
+            value={this.props.quiz.value}
           />
         </fieldset>
         <div className="mt3">
