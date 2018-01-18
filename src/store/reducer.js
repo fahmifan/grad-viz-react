@@ -50,6 +50,7 @@ const reducer = (state = initialState, action) => {
   switch(action.type) {
     case actionType.SUBMIT_QUIZ: 
       const countId = state.countId;
+      const newQuizCopy = state.newQuiz;
       return {
         ...state,
         "countId": countId + 1,
@@ -58,10 +59,17 @@ const reducer = (state = initialState, action) => {
           "quizes": [
             ...state.user.quizes,
             {
-              ...state.newQuiz,
+              ...newQuizCopy,
               id: countId + 1
             }
           ]
+        },
+        newQuiz: {
+          ...newQuizCopy,
+          id: null,
+          quiz_title: '',
+          created_at: '',
+          value: ''
         }
       }
     case actionType.CHANGE_FORM: 
