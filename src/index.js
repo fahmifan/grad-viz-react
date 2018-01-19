@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import reducer from './store/reducer';
+import students from './store/reducers/students';
+import grade from './store/reducers/grade';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = combineReducers({
+  grade: grade,
+  students: students
+}) 
 
 const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 const app = (
