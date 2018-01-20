@@ -7,6 +7,10 @@ import * as actions from '../../store/actions/index';
 
 class Students extends Component {
 
+  componentDidMount() {
+    this.props.onFetchStudetns();
+  }
+
   onClickHandler = (id) => {
     this.props.history.push(`/dashboard/${id}`)
   }
@@ -42,10 +46,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    onFetchStudetns: () => dispatch(actions.fetchStudents())
-  }
-}
   return {
     onFetchStudetns: () => dispatch(actions.fetchStudents())
   }
