@@ -34,4 +34,15 @@ class Students extends Component {
   }
 }
 
-export default Students;
+const mapStateToProps = state => {
+  return {
+    students: state.students.students,
+    error: state.students.error
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onFetchStudetns: () => dispatch(actions.fetchStudents())
+  }
+}
