@@ -14,7 +14,7 @@ import grade from './store/reducers/grade';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  grade: grade,
+  // grade: grade,
   students: students
 }) 
 
