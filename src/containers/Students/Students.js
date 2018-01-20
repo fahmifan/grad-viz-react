@@ -46,3 +46,9 @@ const mapDispatchToProps = dispatch => {
     onFetchStudetns: () => dispatch(actions.fetchStudents())
   }
 }
+  return {
+    onFetchStudetns: () => dispatch(actions.fetchStudents())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Students);
