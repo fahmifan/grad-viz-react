@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Student from '../../components/Student/Student';
+import * as actions from '../../store/actions/index';
 
 class Students extends Component {
 
