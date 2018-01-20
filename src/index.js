@@ -9,12 +9,12 @@ import './index.css';
 import App from './App';
 import reducer from './store/reducer';
 import students from './store/reducers/students';
-import grade from './store/reducers/grade';
+import quizes from './store/reducers/quizes';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  // grade: grade,
+  // quizes: quizes,
   students: students
 }) 
 
