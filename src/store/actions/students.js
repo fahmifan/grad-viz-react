@@ -1,6 +1,10 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios-students';
 
+// ***********************
+//  START STUDENTS FETCH
+// ***********************
+
 export const initStudents = () => {
   return {
     type: actionTypes.INIT_STUDENTS
@@ -21,6 +25,10 @@ export const initStudentsFail = (error) => {
   }
 } 
 
+/**
+ * Async fetch with thunk middleware
+ */
+
 export const fetchStudents = dispatch => {
   return dispatch => {
     dispatch(initStudents());
@@ -34,3 +42,8 @@ export const fetchStudents = dispatch => {
       })
   }
 }
+
+// *********************
+// END STUDENTS FETCH
+// *********************
+
